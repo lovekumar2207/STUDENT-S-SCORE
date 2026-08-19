@@ -1,0 +1,32 @@
+students = [
+    {"name": "Aman", "score": 45},
+    {"name": "Riya", "score": 52},
+    {"name": "Karan", "score": 61},
+    {"name": "Priya", "score": 68},
+    {"name": "Rahul", "score": 74},
+    {"name": "Sneha", "score": 81},
+    {"name": "Vikas", "score": 90}
+]
+def search_student(students,target,show_steps=True):
+    low=0
+    high=6
+    while low<=high :
+      middle=(low + high) // 2
+      middle_value = students[middle]["score"]
+      if show_steps == True:
+          print("Checking Score:", middle_value)
+      if middle_value == target:
+        return students[middle]["name"]
+      elif middle < target:
+         low = middle+1
+      elif middle_value > target :
+         high = middle-1
+      else:
+        return "Student not found"
+ 
+
+result_search_student = search_student(students,target=81,show_steps=True)
+print(result_search_student)
+
+
+
